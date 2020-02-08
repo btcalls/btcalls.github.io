@@ -1,17 +1,14 @@
 import React from 'react';
+import Container from 'react-bootstrap/Container';
 
-import './index.css';
+import './index.scss';
 
-const App = () => {
+const HomePage = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Coming soon...
-        </p>
-      </header>
-    </div>
+    <Container>
+      <h1>Hi, I'm</h1>
+    </Container>
   );
 }
 
-export default App;
+export default HomePage;

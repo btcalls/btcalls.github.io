@@ -5,7 +5,7 @@ import HomePage from './containers/Home';
 
 import * as serviceWorker from './serviceWorker';
 
-import './index.css';
+import './index.scss';
 
 ReactDOM.render(<HomePage />, document.getElementById('root'));
 
