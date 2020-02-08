@@ -1,0 +1,48 @@
+@import '../../scss/variables.scss';
+
+.NavBar-container {
+  align-items: center;
+  background-color: transparent;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  // width: 100%;
+
+  .menus, .sns {
+    align-items: center;
+    display: flex;
+
+    span {
+      cursor: pointer;
+      font-size: 18px;
+    }
+  }
+
+  .menus {
+    justify-content: flex-start;
+
+    > :not(:last-child) {
+      margin-right: 1rem;
+    }
+
+    span {
+      &.enabled {
+        font-weight: 700;
+        color: $accent;
+      }
+    }
+  }
+
+  .sns {
+    justify-content: flex-end;
+
+    > :not(:first-child) {
+      margin-left: 1rem;
+    }
+  }
+}
