@@ -1,11 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import WebFont from 'webfontloader';
 
 import HomePage from './containers/Home';
 
 import * as serviceWorker from './serviceWorker';
 
 import './index.scss';
+
+WebFont.load({
+  google: {
+    families: ['Montserrat:300,400,700', 'sans-serif']
+  }
+});
 
 ReactDOM.render(<HomePage />, document.getElementById('root'));
 
