@@ -1,4 +1,4 @@
-@import '../../scss/variables.scss';
+@import 'scss/variables.scss';
 
 .NavBar-container {
   align-items: center;
@@ -6,35 +6,20 @@
   color: white;
   display: flex;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  position: absolute;
-  top: 0;
   left: 0;
+  padding: 1rem 1.5rem;
+  position: absolute;
   right: 0;
-  // width: 100%;
+  top: 0;
+  z-index: 999;
 
   .menus, .sns {
     align-items: center;
     display: flex;
+    justify-content: flex-start;
 
     span {
       cursor: pointer;
-      font-size: 18px;
-    }
-  }
-
-  .menus {
-    justify-content: flex-start;
-
-    > :not(:last-child) {
-      margin-right: 1rem;
-    }
-
-    span {
-      &.enabled {
-        font-weight: 700;
-        color: $accent;
-      }
     }
   }
 
@@ -43,6 +28,14 @@
 
     > :not(:first-child) {
       margin-left: 1rem;
+    }
+
+    span {
+      font-size: 18px;
+    }
+
+    span:hover {
+      color: $accent;
     }
   }
 }

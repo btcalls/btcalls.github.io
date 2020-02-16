@@ -1,0 +1,91 @@
+@import 'scss/variables.scss';
+
+.ExpertiseSection-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+
+  &.left {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  &.right {
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  h1, h3 {
+    font-size: 4rem;
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  img {
+    object-fit: cover;
+    opacity: 0.25;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .bg-web, .bg-mobile {
+    background-color: $bg;
+    animation: fade 1s;
+  }
+
+  .footer {
+    align-items: center;
+    background-color: transparent;
+    color: white;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    padding: 1rem 1.5rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+
+    span {
+      cursor: pointer;
+      margin: 0 1rem;
+      padding-bottom: 0.5rem;
+    }
+
+    span.enabled {
+      border-bottom: 1.5px solid $accent;
+    }
+  }
+
+  .info-container.active {
+    animation: float 0.5s;
+  }
+
+  .info-container, .info-container.active,
+  .text-container, .text-container.active {
+    padding: 1.5rem;
+  }
+
+  .info-container,
+  .text-container {
+    display: none;
+    opacity: 1;
+    visibility: hidden;
+    z-index: 1;
+  }
+
+  .info-container.active,
+  .text-container.active {
+    display: block;
+    visibility: visible;
+    animation: float 0.5s;
+  }
+}

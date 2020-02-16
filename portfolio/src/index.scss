@@ -13,3 +13,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.accent-text {
+  color: $accent;
+}
+
+.brand {
+  border: 0.5px solid white;
+  border-color: white;
+  border-radius: 5px;
+  font-size: 10px;
+  letter-spacing: 5px;
+  padding: 0.5rem 0.8rem 0.5rem 1rem;
+}

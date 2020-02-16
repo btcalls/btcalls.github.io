@@ -41,9 +41,7 @@ const NavBar = () => {
   return (
     <div className="NavBar-container">
       <div className="menus">
-        {/* <span className="enabled">Home</span>
-        <span>Work</span>
-        <span>About</span> */}
+        <span className="brand">BTCALLS</span>
       </div>
 
       <div className="sns">
