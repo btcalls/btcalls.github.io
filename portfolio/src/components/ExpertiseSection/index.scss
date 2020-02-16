@@ -1,6 +1,12 @@
 @import 'scss/variables.scss';
 
 .ExpertiseSection-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+
   &.left {
     align-items: flex-start;
     text-align: left;
@@ -11,11 +17,15 @@
     text-align: right;
   }
 
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
-  width: 100%;
+  h1, h3 {
+    font-size: 4rem;
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
 
   img {
     object-fit: cover;
@@ -26,14 +36,9 @@
     height: 100vh;
   }
 
-  h1, h3 {
-    font-size: 4rem;
-    margin: 0;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    font-weight: 300;
+  .bg-web, .bg-mobile {
+    background-color: $bg;
+    animation: fade 1s;
   }
 
   .footer {
@@ -50,6 +55,7 @@
     z-index: 999;
 
     span {
+      cursor: pointer;
       margin: 0 1rem;
       padding-bottom: 0.5rem;
     }
@@ -59,7 +65,27 @@
     }
   }
 
-  .text-container {
+  .info-container.active {
+    animation: float 0.5s;
+  }
+
+  .info-container, .info-container.active,
+  .text-container, .text-container.active {
     padding: 1.5rem;
+  }
+
+  .info-container,
+  .text-container {
+    display: none;
+    opacity: 1;
+    visibility: hidden;
+    z-index: 1;
+  }
+
+  .info-container.active,
+  .text-container.active {
+    display: block;
+    visibility: visible;
+    animation: float 0.5s;
   }
 }

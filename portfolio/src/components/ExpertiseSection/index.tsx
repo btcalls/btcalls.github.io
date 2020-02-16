@@ -5,12 +5,16 @@ import { faLaptop, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
 import './index.scss';
 
 type Direction = 'left' | 'right';
-type Image = { id: number, src: any, alt: string };
-type Tech = 'Web' | 'Mobile';
+type Stack = {
+  id: number,
+  src: any,
+  alt: string,
+  title: string;
+};
 
-const images: Image[] = [
-  { id: 0, src: require('assets/images/web.jpg'), alt: "Web Development" },
-  { id: 1, src: require('assets/images/bball.jpg'), alt: "Basketball court" },
+const stacks: Stack[] = [
+  { id: 0, src: require('assets/images/web.jpg'), alt: "Web Development", title: 'Web' },
+  { id: 1, src: require('assets/images/mobile.jpg'), alt: "iOS apps", title: 'Mobile' },
 ];
 
 const ExpertiseSection = () => {
@@ -18,30 +22,31 @@ const ExpertiseSection = () => {
   const [index, setIndex] = useState(0);
 
   // Content
-  const [title, setTitle] = useState<Tech>('Web');
-
   const isLeft = direction === 'left';
 
   const onSwitch = (d: Direction) => {
     const isLeft = d === 'left';
 
-    console.log('click');
     setDirection(d);
     setIndex(isLeft ? 0 : 1);
-    setTitle(isLeft ? 'Web' : 'Mobile');
   }
 
   return (
     <div className={`ExpertiseSection-container ${direction}`}>
       <img
-        key={images[index].id}
-        src={images[index].src}
-        alt={images[index].alt}
+        className={`bg-${isLeft ? 'web' : 'mobile'}`}
+        key={stacks[index].id}
+        src={stacks[index].src}
+        alt={stacks[index].alt}
       />
-      <div className="text-container">
-        <h1>{title}</h1>
-        <h3>Development</h3>
-      </div>
+
+      {stacks.map((item, i) => (
+        <div key={i} className={`text-container${index === i ? ' active' : ''}`}>
+          <h1>{item.title}</h1>
+          <h3>Development</h3>
+        </div>
+      ))}
+
       <div className="footer">
         <span
           className={isLeft ? 'enabled' : ''}

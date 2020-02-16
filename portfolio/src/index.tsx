@@ -7,6 +7,7 @@ import HomePage from 'containers/Home';
 import * as serviceWorker from './serviceWorker';
 
 import './index.scss';
+import './scss/animations.scss';
 
 WebFont.load({
   google: {
