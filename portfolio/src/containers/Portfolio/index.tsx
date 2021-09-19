@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-common-types';
 import { faLaptop, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
 
+import BasePage from 'components/BasePage';
+
 import './index.scss';
 
 type Direction = 'left' | 'right';
@@ -28,7 +30,7 @@ const stacks: Stack[] = [
     icon: faLaptop },
 ];
 
-const ExpertiseSection = (): React.ReactElement => {
+export default function Portfolio(): React.ReactElement {
   const [direction, setDirection] = useState<Direction>('left');
   const [index, setIndex] = useState(0);
 
@@ -43,39 +45,39 @@ const ExpertiseSection = (): React.ReactElement => {
   };
 
   return (
-    <div className={`ExpertiseSection-container ${direction}`}>
-      <img
-        className={`bg-${isLeft ? 'web' : 'mobile'}`}
-        key={current.id}
-        src={current.src}
-        alt={current.alt}
-      />
+    <BasePage>
+      <div className={`ExpertiseSection-container ${direction}`}>
+        <img
+          className={`bg-${isLeft ? 'web' : 'mobile'}`}
+          key={current.id}
+          src={current.src}
+          alt={current.alt}
+        />
 
-      {stacks.map((item, i) => (
-        <div key={i} className={`text-container${index === i ? ' active' : ''}`}>
-          <h1>{item.title}</h1>
-          <h3>Development</h3>
+        {stacks.map((item, i) => (
+          <div key={i} className={`text-container${index === i ? ' active' : ''}`}>
+            <h1>{item.title}</h1>
+            <h3>Development</h3>
+          </div>
+        ))}
+
+        <div className="footer">
+          <span
+            className={isLeft ? 'enabled' : ''}
+            onClick={() => onSwitch('left')}
+            aria-hidden="true"
+          >
+            <FontAwesomeIcon icon={stacks[0].icon} />
+          </span>
+          <span
+            className={!isLeft ? 'enabled' : ''}
+            onClick={() => onSwitch('right')}
+            aria-hidden="true"
+          >
+            <FontAwesomeIcon icon={stacks[1].icon} />
+          </span>
         </div>
-      ))}
-
-      <div className="footer">
-        <span
-          className={isLeft ? 'enabled' : ''}
-          onClick={() => onSwitch('left')}
-          aria-hidden="true"
-        >
-          <FontAwesomeIcon icon={stacks[0].icon} />
-        </span>
-        <span
-          className={!isLeft ? 'enabled' : ''}
-          onClick={() => onSwitch('right')}
-          aria-hidden="true"
-        >
-          <FontAwesomeIcon icon={stacks[1].icon} />
-        </span>
       </div>
-    </div>
+    </BasePage>
   );
-};
-
-export default ExpertiseSection;
+}

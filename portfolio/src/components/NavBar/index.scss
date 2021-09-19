@@ -20,11 +20,20 @@
 
     span {
       cursor: pointer;
+
+      .menu-item {
+        font-size: medium;
+      }
     }
   }
 
   .sns {
     justify-content: flex-end;
+
+    .menu {
+      width: 100px;
+      text-align: center;
+    }
 
     > :not(:first-child) {
       margin-left: 1rem;

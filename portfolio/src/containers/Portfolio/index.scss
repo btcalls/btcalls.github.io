@@ -3,7 +3,7 @@
 .ExpertiseSection-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   justify-content: center;
   width: 100%;
 
@@ -58,6 +58,8 @@
       cursor: pointer;
       margin: 0 1rem;
       padding-bottom: 0.5rem;
+      width: 2rem;
+      text-align: center;
     }
 
     span.enabled {
